@@ -28,10 +28,17 @@ for song in data["songs"]:
     print(song["title"])
 """
 
-# Get random song
-length = len(data["songs"])
-songNum = random.randint(0, length-1)
-song = data["songs"][songNum]
+albums_list = ["Temple", "A Man Alive", "The Feeling Kind", "We The Common", "Know Better Learn Faster", "We Brave Bee Stings and All"]
+album = ""
+
+while not album in albums_list:
+    # Get random song
+    length = len(data["songs"])
+    songNum = random.randint(0, length-1)
+    song = data["songs"][songNum]
+    album = song["album"]["name"]
+
+print("ALBUM", album)
 
 # Get list of song lyrics
 lyrics = song["lyrics"]
