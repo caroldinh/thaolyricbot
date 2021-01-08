@@ -54,10 +54,8 @@ for x in range(4):
     if(lines[lineNum] == "" or (lines[lineNum][0] == "[")):
         if(x > 1):
             break
-        else:
-            lineNum += 1
     
-    if len(tweet + lines[lineNum] + " / ") < 280:
+    elif len(tweet + lines[lineNum] + " / ") < 280:
         tweet += lines[lineNum] + " / "
 
     lineNum += 1
@@ -65,8 +63,6 @@ for x in range(4):
 # Remove final slash
 tweet = tweet[:(len(tweet)-3)]
 print(tweet)
-
-print("\n\n\n\n\n")
 
 # Tweet lyrics
 api.update_status(tweet)
